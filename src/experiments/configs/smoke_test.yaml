@@ -1,0 +1,32 @@
+name: "smoke_test_blobs"
+wandb: false
+
+data:
+  name: "blobs"
+  n_samples: 500
+  n_clusters: 3
+  noise: 0.5
+  standardize: true
+
+model:
+  encoder: "identity"
+  num_prototypes: 3
+  embed_dim: 2
+  cost_type: "squared_euclidean"
+
+ot:
+  epsilon: 0.05
+  sinkhorn_iter: 50
+
+reg:
+  lambda_mass: 0.1
+  lambda_disp: 0.1
+  disp_type: "l2"
+
+training:
+  batch_size: 128
+  epochs: 20
+  lr_enc: 1e-3
+  lr_proto: 1e-2
+  lr_mass: 1e-2
+  eval_every: 5

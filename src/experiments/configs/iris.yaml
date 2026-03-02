@@ -1,0 +1,33 @@
+# Iris UCI experiment
+name: iris
+seed: 42
+n_seeds: 10
+device: cpu
+output_dir: experiments/results
+
+data:
+  name: iris
+  n_clusters: 3
+
+encoder:
+  type: identity
+
+ot:
+  epsilon: 0.05
+  sinkhorn_iter: 50
+  cost_fn: sqeuclidean
+
+reg:
+  lambda_mass: 0.01
+  lambda_disp: 0.0
+
+training:
+  epochs: 200
+  batch_size: 150
+  lr_prototypes: 0.01
+  lr_masses: 0.01
+  learn_masses: true
+  init_method: kmeans
+  mode: full
+  log_every: 20
+  save_every: 200

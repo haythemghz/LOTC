@@ -1,0 +1,24 @@
+name: "cifar10_embedded"
+wandb: false
+data:
+  name: "cifar10"
+  n_samples: 5000
+  standardize: false
+model:
+  encoder: "resnet"
+  num_prototypes: 10
+  embed_dim: 64
+  cost_type: "cosine"
+ot:
+  epsilon: 0.1
+  sinkhorn_iter: 50
+reg:
+  lambda_mass: 0.1
+  lambda_disp: 0.1
+training:
+  batch_size: 256
+  epochs: 30
+  lr_enc: 1e-4
+  lr_proto: 1e-3
+  lr_mass: 1e-2
+  eval_every: 5

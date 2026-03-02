@@ -1,0 +1,95 @@
+epsilon_study:
+  0.01:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - &id001 !!python/object/apply:numpy.dtype
+      args:
+      - f8
+      - false
+      - true
+      state: !!python/tuple
+      - 3
+      - <
+      - null
+      - null
+      - null
+      - -1
+      - -1
+      - 0
+    - !!binary |
+      yjLEsS5u4T8=
+    ARI: 0.38108715894787354
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      yfBXmoKr4D8=
+  0.05:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      k6mCUUmd4D8=
+    ARI: 0.3676568296814522
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      3B861Mlg4D8=
+  0.1:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      CYofY+5a4D8=
+    ARI: 0.3696623560865486
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      unBcCDla4D8=
+  0.5:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      lkOLbOf73T8=
+    ARI: 0.3450785086828517
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      pqJMxKoN4D8=
+iter_study:
+  5:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      FmpN845T4D8=
+    ARI: 0.3753081732971209
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      8MsEARe04D8=
+  10:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      OPjCZKpg4D8=
+    ARI: 0.3754726735597037
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      9UaQjCOV4D8=
+  20:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      6+I2GsBb4D8=
+    ARI: 0.37172284773919856
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      3CogIrth4D8=
+  50:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      CYofY+5a4D8=
+    ARI: 0.3696623560865486
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      unBcCDla4D8=

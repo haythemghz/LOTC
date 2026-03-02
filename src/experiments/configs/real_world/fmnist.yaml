@@ -1,0 +1,25 @@
+name: "fashion_mnist_embedded"
+wandb: false
+data:
+  name: "fmnist"
+  n_samples: 5000
+  standardize: true
+model:
+  encoder: "mlp"
+  hidden_dims: [512, 256]
+  num_prototypes: 10
+  embed_dim: 10
+  cost_type: "squared_euclidean"
+ot:
+  epsilon: 0.1
+  sinkhorn_iter: 50
+reg:
+  lambda_mass: 0.1
+  lambda_disp: 0.1
+training:
+  batch_size: 1024
+  epochs: 50
+  lr_enc: 1e-3
+  lr_proto: 1e-3
+  lr_mass: 1e-2
+  eval_every: 10

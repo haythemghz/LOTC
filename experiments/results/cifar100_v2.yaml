@@ -1,0 +1,33 @@
+kmeans:
+  ACC: !!python/object/apply:numpy.core.multiarray.scalar
+  - &id001 !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    NuohGt1BxD8=
+  ARI: 0.10719386206546506
+  NMI: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    akl/LqeR2T8=
+lotc:
+  ACC: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    S7A4nPnVxD8=
+  ARI: 0.11253616245838471
+  NMI: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    Gg5v3Vsp2T8=

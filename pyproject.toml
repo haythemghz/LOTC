@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lotc"
+version = "0.1.0"
+description = "Learned Optimal Transport Clustering"
+authors = [
+    { name="Author", email="author@example.com" }
+]
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "torch>=2.0.0",
+    "torchvision",
+    "numpy>=1.23.0",
+    "scipy",
+    "scikit-learn",
+    "matplotlib",
+    "seaborn",
+    "pandas",
+    "tqdm",
+    "pyyaml",
+    "pot>=0.9.0",
+    "wandb",
+    "tensorboard"
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "flake8",
+    "black",
+    "isort"
+]
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"

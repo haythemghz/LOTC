@@ -1,0 +1,27 @@
+name: lotc
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - numpy>=1.23.0
+  - scipy
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - pandas
+  - tqdm
+  - pyyaml
+  - pytorch>=2.0.0
+  - torchvision
+  - torchaudio
+  - pytorch-cuda=11.8
+  - pot>=0.9.0
+  - wandb
+  - tensorboard
+  - pytest
+  - pip:
+    - -e .

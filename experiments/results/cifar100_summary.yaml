@@ -1,0 +1,57 @@
+deepcluster-v2:
+  metrics:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - &id001 !!python/object/apply:numpy.dtype
+      args:
+      - f8
+      - false
+      - true
+      state: !!python/tuple
+      - 3
+      - <
+      - null
+      - null
+      - null
+      - -1
+      - -1
+      - 0
+    - !!binary |
+      /fZ14JwRtT8=
+    ARI: 0.04734383509609836
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      Hsiotdwszj8=
+dino:
+  metrics:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      9dvXgXNGxD8=
+    ARI: 0.1080286442379658
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      3Mz4G1ka2j8=
+kmeans:
+  metrics:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      NuohGt1BxD8=
+    ARI: 0.10719386206546506
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      akl/LqeR2T8=
+lotc:
+  metrics:
+    ACC: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      uvdwyXGnxD8=
+    ARI: 0.11694563522424575
+    NMI: !!python/object/apply:numpy.core.multiarray.scalar
+    - *id001
+    - !!binary |
+      lcl9ok2r2T8=

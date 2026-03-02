@@ -1,0 +1,73 @@
+config:
+  data:
+    n_samples: 5000
+    name: cifar10
+    standardize: true
+  model:
+    cost_type: squared_euclidean
+    embed_dim: 128
+    encoder: resnet
+    num_prototypes: 10
+  name: cifar10_hardened
+  ot:
+    epsilon: 0.05
+    sinkhorn_iter: 50
+    use_divergence: true
+  reg:
+    disp_type: collision
+    lambda_disp: 0.01
+    lambda_lap: 0.0
+    lambda_mass: 0.1
+  training:
+    batch_size: 128
+    epochs: 30
+    eval_every: 2
+    lambda_cons: 1.0
+    lr_enc: 0.0001
+    lr_mass: 0.01
+    lr_proto: 0.01
+    warmup_epochs: 20
+  wandb: false
+kmeans_final:
+  ACC: !!python/object/apply:numpy.core.multiarray.scalar
+  - &id001 !!python/object/apply:numpy.dtype
+    args:
+    - f8
+    - false
+    - true
+    state: !!python/tuple
+    - 3
+    - <
+    - null
+    - null
+    - null
+    - -1
+    - -1
+    - 0
+  - !!binary |
+    T6+UZYhj1T8=
+  ARI: 0.19750292363425903
+  NMI: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    1uElY3jI0j8=
+lotc_final:
+  ACC: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    fGEyVTAqyT8=
+  ARI: 0.12477843201198695
+  NMI: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    1rmUQGyr0D8=
+post_warmup_kmeans:
+  ACC: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    5BQdyeU/3D8=
+  ARI: 0.20290480325881846
+  NMI: !!python/object/apply:numpy.core.multiarray.scalar
+  - *id001
+  - !!binary |
+    oEf7e/+l0j8=

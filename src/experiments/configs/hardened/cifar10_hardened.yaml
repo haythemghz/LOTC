@@ -1,0 +1,34 @@
+name: "cifar10_hardened"
+data:
+  name: "cifar10"
+  n_samples: 5000
+  standardize: true
+
+model:
+  encoder: "resnet"
+  embed_dim: 128
+  num_prototypes: 10
+  cost_type: "squared_euclidean"
+
+ot:
+  epsilon: 0.05
+  sinkhorn_iter: 50
+  use_divergence: true
+
+reg:
+  lambda_mass: 0.1
+  lambda_disp: 0.01
+  lambda_lap: 0.0
+  disp_type: "collision"
+
+training:
+  batch_size: 128
+  epochs: 30
+  warmup_epochs: 20
+  lr_enc: 0.0001
+  lr_proto: 0.01
+  lr_mass: 0.01
+  lambda_cons: 1.0
+  eval_every: 2
+
+wandb: false

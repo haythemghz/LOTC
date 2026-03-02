@@ -1,0 +1,26 @@
+name: "synthetic_moons"
+wandb: false
+data:
+  name: "moons"
+  n_samples: 1000
+  noise: 0.1
+  standardize: true
+model:
+  encoder: "mlp"
+  hidden_dims: [64, 64]
+  num_prototypes: 2
+  embed_dim: 2
+  cost_type: "squared_euclidean"
+ot:
+  epsilon: 0.05
+  sinkhorn_iter: 50
+reg:
+  lambda_mass: 0.1
+  lambda_disp: 0.1
+training:
+  batch_size: 128
+  epochs: 50
+  lr_enc: 1e-3
+  lr_proto: 1e-2
+  lr_mass: 1e-2
+  eval_every: 10
