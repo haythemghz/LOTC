@@ -5,15 +5,16 @@ Official implementation of "Learned Optimal Transport Clustering: A Differentiab
 LOTC is a differentiable framework for prototype-based clustering anchored in the principle of atomic measure learning. By minimizing the entropic Sinkhorn distance between an empirical data distribution and a learned discrete target measure, we enable the joint optimization of deep embeddings and cluster prototypes with formal mass conservation.
 
 ## Features
-- **Theoretical Grounding**: Joint stability guarantees and bias-variance analysis.
-- **Statistical Rigor**: 10-seed benchmarks with paired t-tests and Cohen's d.
-- **Robustness**: Performance maintained under extreme imbalance (up to 1:500) and feature noise.
-- **Scalability**: $O(BK)$ memory complexity and efficient unrolled Sinkhorn gradients.
+- **Theoretical Grounding**: Joint stability guarantees and explicit bias-variance tradeoff bounds.
+- **Statistical Rigor**: Multi-seed benchmarks evaluated with Wilcoxon signed-rank tests for significance mapping.
+- **Robustness**: Performance maintained under extreme imbalance (up to 1:500) through mass adaptation.
+- **Multi-Backbone Support**: Native support for ResNet-18, ResNet-50, and DINO (ViT) extractors.
+- **Multi-Modality**: Evaluated across image (CIFAR, STL-10, Tiny-ImageNet) and text (20Newsgroups) domains.
 
 ## Repository Structure
-- `src/`: Core implementation of LOTC and OT solvers.
-- `scripts/`: Reproducibility scripts for benchmarks, scaling studies, and stress tests.
-- `experiments/`: Configuration files and summary results.
+- `src/`: Core implementation of LOTC Sinkhorn solvers and clustering objectives.
+- `experiments/`: Main benchmark scripts including `run_full_benchmark.py`, `baselines.py`, and `encoders.py`.
+- `scripts/`: Assorted reproducibility scripts and visual diagnostics.
 
 ## Reproducibility
 ### Prerequisites
@@ -22,22 +23,23 @@ LOTC is a differentiable framework for prototype-based clustering anchored in th
 pip install -r requirements.txt
 ```
 
-### Running Benchmarks
-To reproduce the rigorous 10-seed benchmarks:
+### Running Full Benchmarks
+To reproduce the full multi-backbone LOTC evaluation against SOTA baselines (DEC, SCAN, P²OT):
 ```bash
-python scripts/run_rigorous_eval.py --dataset stl10
+python experiments/run_full_benchmark.py --dataset cifar10 --backbone resnet18 --seeds 10
+python experiments/run_full_benchmark.py --dataset stl10 --backbone dino --seeds 5
+```
+
+### Statistical Analysis
+To compute Wilcoxon signed-rank matrices and export LaTeX tables:
+```bash
+python experiments/statistical_analysis.py --dataset cifar10
 ```
 
 ### Stress Tests
-To evaluate robustness against imbalance and noise:
+To evaluate robustness against imbalance:
 ```bash
 python scripts/run_stress_tests.py
-```
-
-### Scaling Study
-To reproduce the runtime/memory scaling plots:
-```bash
-python scripts/benchmark_grid.py
 ```
 
 ## Citation
