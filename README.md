@@ -45,7 +45,7 @@ python scripts/run_stress_tests.py
 ## Citation
 If you find this research useful, please cite:
 ```bibtex
-@article{lotc2025,
+@article{lotc2026,
   title={Learned Optimal Transport Clustering: A Differentiable Wasserstein Framework for Prototype Learning},
   author={Haythem Ghazouani},
   journal={Submitted},
