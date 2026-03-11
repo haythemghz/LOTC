@@ -180,3 +180,14 @@ def critical_difference_diagram(
         fig.savefig(save_path, dpi=150, bbox_inches="tight")
 
     return fig
+
+
+def calculate_statistics(scores: list[float] | np.ndarray) -> dict[str, float]:
+    """Calculate mean and standard deviation for a list of scores."""
+    scores = np.array(scores)
+    return {
+        "mean": float(np.mean(scores)),
+        "std": float(np.std(scores)),
+        "min": float(np.min(scores)),
+        "max": float(np.max(scores)),
+    }

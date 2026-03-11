@@ -26,14 +26,14 @@ pip install -r requirements.txt
 ### Running Full Benchmarks
 To reproduce the full multi-backbone LOTC evaluation against SOTA baselines (DEC, SCAN, P²OT):
 ```bash
-python experiments/run_full_benchmark.py --dataset cifar10 --backbone resnet18 --seeds 10
-python experiments/run_full_benchmark.py --dataset stl10 --backbone dino --seeds 5
+python scripts/run_full_benchmark.py --dataset cifar10 --backbone resnet18 --seeds 10
+python scripts/run_full_benchmark.py --dataset stl10 --backbone dino --seeds 5
 ```
 
 ### Statistical Analysis
 To compute Wilcoxon signed-rank matrices and export LaTeX tables:
 ```bash
-python experiments/statistical_analysis.py --dataset cifar10
+python scripts/statistical_analysis.py --dataset cifar10
 ```
 
 ### Stress Tests

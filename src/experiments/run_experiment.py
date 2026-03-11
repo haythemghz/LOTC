@@ -71,21 +71,26 @@ def build_model(cfg: dict, input_dim: int):
     enc_type = cfg['model']['encoder']
     embed_dim = cfg['model']['embed_dim']
     K = cfg['model']['num_prototypes']
-    
+
     if enc_type == 'identity':
         encoder = IdentityEncoder()
         embed_dim = input_dim
     elif enc_type == 'mlp':
         encoder = MLPEncoder(
-            input_dim=input_dim, 
+            input_dim=input_dim,
             hidden_dims=cfg['model'].get('hidden_dims', [128, 128]),
             output_dim=embed_dim
         )
-    elif enc_type == 'resnet':
-        encoder = ResNetEncoder(output_dim=embed_dim)
+    elif enc_type in ('resnet', 'resnet18'):
+        encoder = ResNetEncoder(output_dim=embed_dim, backbone='resnet18')
+    elif enc_type == 'resnet50':
+        encoder = ResNetEncoder(output_dim=embed_dim, backbone='resnet50')
+    elif enc_type == 'dino':
+        from src.models.encoders import DINOViTEncoder
+        encoder = DINOViTEncoder(output_dim=embed_dim)
     else:
         raise ValueError(f"Unknown encoder: {enc_type}")
-        
+
     model = LOTCModel(
         encoder=encoder,
         num_prototypes=K,
@@ -94,6 +99,7 @@ def build_model(cfg: dict, input_dim: int):
         normalize=cfg['model'].get('normalize', True)
     )
     return model
+
 
 def main():
     parser = argparse.ArgumentParser(description="LOTC Experiment Runner")
