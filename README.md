@@ -48,7 +48,7 @@ If you find this research useful, please cite:
 @article{lotc2025,
   title={Learned Optimal Transport Clustering: A Differentiable Wasserstein Framework for Prototype Learning},
   author={...},
-  journal={...},
-  year={2025}
+  journal={Submitted},
+  year={2026}
 }
 ```
